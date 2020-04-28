@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "515534530953",
+    "firebase_url": "https://plantit-5dc90.firebaseio.com",
+    "project_id": "plantit-5dc90",
+    "storage_bucket": "plantit-5dc90.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:515534530953:android:6b193b7725968906499958",
+        "android_client_info": {
+          "package_name": "de.cbuystudio.plantit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "515534530953-0c46mf4k7ki627ce5hp8ra1paj1ve35u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBb45jyS0E_qlWtVLcGaecVHOZXyGOgauc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "515534530953-0c46mf4k7ki627ce5hp8ra1paj1ve35u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
