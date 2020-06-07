@@ -13,8 +13,9 @@ class CreditsPageState extends State<CreditsPage> {
 
   // Offset is 3, By knowing the Offset we only need to program the Decryption. Original Text "This app is developed by Phil Gengenbach and Samir Yasin"
   String creditText = "Wklv#dss#lv#ghyhorshg#e|#Sklo#Jhqjhqedfk#dqg#Vdplu#\\dvlq";
-  String klarText;
-  bool decrypted = false;
+  String klarText; //placeholder for the decrypted text
+  bool decrypted = false; //initalized with false
+
 
   decrypt () {
    if(decrypted == false) { //Only If Text is encrypted
@@ -23,23 +24,21 @@ class CreditsPageState extends State<CreditsPage> {
 
      klarText = "";
 
-     for (int i = 0; i < creditText.length; i++) {
-       int oldchar = creditText.codeUnitAt(i);
-       print(oldchar);
-       print("--");
-       int decodedCharASCII = oldchar + offset;
-       var newchar = String.fromCharCode(decodedCharASCII); //Convert ASCII int that represents char to Char
-       print(decodedCharASCII);
+     for (int i = 0; i < creditText.length; i++) { //iterates through the whole String, char by char
+       int oldchar = creditText.codeUnitAt(i); //ASCII of old Char
+       int decodedCharASCII = oldchar + offset; //ASCII of decripted Char
+       var newchar = String.fromCharCode(decodedCharASCII); //Convert ASCII-int to String that holds one char
 
-       klarText += newchar; //add decrytpedChar to klartext
-     }
+       klarText += newchar; //add decryptedChar to klarText
+   }
+     //sets the new state -> Calls Build Method -> UI is rebuild
      setState(() {
        this.decrypted = true;
        this.creditText = klarText;
      });
    }
 
- } // Decryption with the key as -3 , this will show the original text
+ }
 
 
 

@@ -22,8 +22,6 @@ class Home extends StatelessWidget {
 }
 
 
-
-
 class HomePageView extends StatefulWidget {
 
   //Routing Name

@@ -12,6 +12,7 @@ class FAQTab extends StatelessWidget {
 
   static const routeName = '/FAQTab';
 
+  //Creates a new List with prewritten FAQItems (includes Question and Answer)
   List<FAQItem> faqitems = [
     FAQItem("How Do I Make My Tree Grow?",
         "In order to grow your tree you need to complete Active and Daily Missions. By completing these Missions you achieve a certain amount of Score. The higher the Score the bigger the Tree."),
@@ -28,6 +29,7 @@ class FAQTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      //FloatingActionButton wrapped by a Container that has the desired design and shape.
         floatingActionButton: Container(
           decoration: BoxDecoration(
             color: Colors.white,
@@ -40,6 +42,8 @@ class FAQTab extends StatelessWidget {
             ],
             borderRadius: BorderRadius.circular(23.00),
           ),
+
+          //FloatingActionButton which includes Label
           child: FloatingActionButton.extended(
             label: Text(
               "Credits",
@@ -61,21 +65,23 @@ class FAQTab extends StatelessWidget {
         ),
         appBar: AppBar(title: Text('PlantIt'), backgroundColor: Colors.lightGreen,),
         body: Container(
-          decoration: BoxDecoration(
+          decoration: BoxDecoration( //Background Image - Theme as BoxDecoration inside Container
               image: DecorationImage(
                 image: AssetImage("assets/images/background/Mid_MainTab.png"),
                 fit: BoxFit.fill,
               )),
+
           child: Container(
             margin: EdgeInsets.symmetric(vertical: 25, horizontal: 15),
-            child:
-                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            child: Column(crossAxisAlignment: CrossAxisAlignment.start,children: [
                   Container(
                     margin: EdgeInsets.symmetric(horizontal: 35),
                     child: Text("FAQ",
                         style: TextStyle(fontSize: 28, fontFamily: 'Montserrat')),
                   ),
-                  SizedBox(height: 20),
+
+                  SizedBox(height: 20), //Empty SizedBox used for spacing between Widgets
+
                   Expanded(
                     child: ListView.separated(
                       itemCount: faqitems.length,
@@ -102,10 +108,12 @@ class FAQTab extends StatelessWidget {
                               ),
                               trailing: Icon(Icons.keyboard_arrow_right, color: Color(0xff484848), size: 30,),
                               onTap: () {
+                                //Opens up the DetailPage with faq[index] this means it opens up the DetailsPage depending on
+                                // what ListTile we clicked, If it is the 3rd one it will display the 3rd Question and Answer
                                 Navigator.push(context, MaterialPageRoute(builder: (context) => DetailsPage(faqitems[index])));
                               },
                               title: Text(
-                                faqitems[index].question,
+                                faqitems[index].question, //Shows Question of FAQ-Item-Object
                                 style: TextStyle(
                                   fontSize: 15,
                                   color: Color(0xff484848),

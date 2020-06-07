@@ -9,7 +9,6 @@ import 'package:plantit/pages/settings/Settings.dart';
 class TopAppBar{
 
 
-
   AppBar getAppBar(context) {
     return AppBar(
       title: Text('PlantIt'),

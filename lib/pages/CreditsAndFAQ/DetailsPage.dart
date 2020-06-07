@@ -9,8 +9,9 @@ import 'package:plantit/utils/SizeHelper.dart';
 class DetailsPage extends StatelessWidget {
 
 
-  FAQItem faqItem;
-  DetailsPage(FAQItem faqitem) {
+  FAQItem faqItem; //holds an FAQItem
+
+  DetailsPage(FAQItem faqitem) { //Constructur hands over FAQItem which is showed in Detail
     this.faqItem = faqitem;
   }
 
@@ -40,7 +41,7 @@ class DetailsPage extends StatelessWidget {
                         blurRadius: 5,
                       ),
                     ],
-                    borderRadius: BorderRadius.circular(23.00),
+                    borderRadius: BorderRadius.circular(23.00), //Rounded Corners
                   ),
                   child: Center(
                     child: Text(
@@ -56,7 +57,7 @@ class DetailsPage extends StatelessWidget {
                 ),
                 SizedBox(height: 30.0,),
                 Text (
-                  faqItem.answer,style: TextStyle(
+                  faqItem.answer,style: TextStyle( //Shows answer under the Container, The answer is different based on what FAQItem was clicked
                   fontFamily: 'Montserratlight',
                   fontSize: 17,),
                 )

@@ -1,3 +1,7 @@
+/*
+ * All rights reserved ~ ©Phil Gengenbach
+ */
+
 import 'package:flutter/material.dart';
 import 'package:plantit/HomePageView.dart';
 import 'package:plantit/Wrapper.dart';
