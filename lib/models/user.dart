@@ -1,6 +1,10 @@
+/*
+ * All rights reserved ~ ©Phil Gengenbach
+ */
 
 /*
-  Eigene User Klasse mit passgenauen Informationen zur leichteren Verarbeitung
+    Eigene User Klasse mit passgenauen Informationen zur leichteren Verarbeitung
+    *UID (Unique Identifier)
  */
 
 class User {

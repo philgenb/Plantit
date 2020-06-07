@@ -1,3 +1,7 @@
+/*
+ * All rights reserved ~ ©Phil Gengenbach
+ */
+
 import 'package:flutter/material.dart';
 
 

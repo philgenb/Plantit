@@ -1,3 +1,7 @@
+/*
+ * All rights reserved ~ ©Phil Gengenbach
+ */
+
 import 'package:flutter/material.dart';
 import 'package:plantit/pages/authentication/Registration.dart';
 import 'package:plantit/pages/authentication/Sign_In.dart';
@@ -21,7 +25,7 @@ class _AuthenticationState extends State<Authentication> {
   @override
   Widget build(BuildContext context) {
     if(showSignInScreen) {
-      return SignIn(switchView: switchView);
+      return SignIn(switchView: switchView); //pass switchView Function
     } else {
       return Registration(switchView: switchView);
     }

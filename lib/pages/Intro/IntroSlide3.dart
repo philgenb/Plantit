@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:plantit/Wrapper.dart';
-import 'package:plantit/pages/Homepage.dart';
+import 'package:plantit/pages/HomeTab.dart';
 
 class IntroSlide3 extends StatelessWidget {
 

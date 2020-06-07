@@ -1,3 +1,7 @@
+/*
+ * All rights reserved ~ ©Phil Gengenbach
+ */
+
 import 'package:flutter/material.dart';
 import 'package:plantit/pages/settings/SettingsUIElements.dart';
 import 'package:plantit/services/auth.dart';
@@ -11,8 +15,8 @@ class Settings extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
    var mediaQuery = MediaQuery.of(context);
-   double deviceheight = mediaQuery.size.height;
-   double devicewidth = mediaQuery.size.width;
+   double deviceHeight = mediaQuery.size.height;
+   double deviceWidth = mediaQuery.size.width;
 
     return Scaffold(
       appBar: AppBar(title: Text('PlantIt'), backgroundColor: Colors.lightGreen,),
@@ -27,19 +31,19 @@ class Settings extends StatelessWidget {
             child: Stack(
               children: <Widget>[
                 Container(
-                  margin: EdgeInsets.only(left: devicewidth * 0.09, right: devicewidth * 0.09, top: deviceheight * 0.07),
-                  height: deviceheight * 0.6,
+                  margin: EdgeInsets.only(left: deviceWidth * 0.09, right: deviceWidth * 0.09, top: deviceHeight * 0.07),
+                  height: deviceHeight * 0.6,
                   child: Column(
                     //mainAxisSize: MainAxisSize.min,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       Padding(
-                          padding: EdgeInsets.only(left: devicewidth*0.03),
+                          padding: EdgeInsets.only(left: deviceWidth*0.03),
                           child: Text("Settings",  style: TextStyle(fontSize: 24, color: Color(0xff3E3E3E), fontFamily: 'Montserrat'))),
                       Expanded(
                         child: SizedBox.expand(
                           child: Container(
-                            padding: EdgeInsets.only(left: devicewidth*0.03),
+                            padding: EdgeInsets.only(left: deviceWidth*0.03),
                             margin: EdgeInsets.only(top: 30),
                             decoration: BoxDecoration(
                                 color: Colors.white,
@@ -63,7 +67,7 @@ class Settings extends StatelessWidget {
                                 }),
 
                                 Padding(
-                                  padding: EdgeInsets.only(top: deviceheight * 0.05),
+                                  padding: EdgeInsets.only(top: deviceHeight * 0.05),
                                   child: SettingsUIElements().getSettingHeadline("Settings", mediaQuery)
                                 ),
                                 SettingsUIElements().getSettingButton("Musik", mediaQuery, () {}),

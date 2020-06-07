@@ -1,12 +1,15 @@
+/*
+ * All rights reserved ~ ©Phil Gengenbach
+ */
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:plantit/services/auth.dart';
 import 'package:plantit/shared/Loading.dart';
 
 /*
-    Anmeldungsscreen -> ermöglicht die Anmeldung Anonym oder auch Accountgebunden
+ * Login Screen -> ermöglicht die Anmeldung anonym oder accountgebunden
  */
-
 class SignIn extends StatefulWidget {
 
   final Function switchView;
@@ -16,8 +19,6 @@ class SignIn extends StatefulWidget {
   @override
   _SignInState createState() => _SignInState();
 }
-
-
 
 class _SignInState extends State<SignIn> {
 
@@ -43,8 +44,8 @@ class _SignInState extends State<SignIn> {
   @override
   Widget build(BuildContext context) {
     var mediaQuery = MediaQuery.of(context);
-    double deviceheight = mediaQuery.size.height;
-    double devicewidth = mediaQuery.size.width;
+    double deviceHeight = mediaQuery.size.height;
+    double deviceWidth = mediaQuery.size.width;
 
     TextStyle style = TextStyle(fontFamily: 'Montserrat', fontSize: 20.0, color: Color(0xff454545));
 
@@ -133,7 +134,7 @@ class _SignInState extends State<SignIn> {
             setState(() {
               loading = true;
             });
-            dynamic result = await _auth.LoginWithEmailAndPassword(email, password);
+            dynamic result = await _auth.loginWithEmailAndPassword(email, password);
             if(result == null) {
               setState(() {
                 loading = false;
@@ -198,7 +199,7 @@ class _SignInState extends State<SignIn> {
                 ),
                 child: Container(
                   //color: Colors.grey,
-                  margin: EdgeInsets.only(left: devicewidth * 0.09, right: devicewidth * 0.09, top: deviceheight * 0.125),
+                  margin: EdgeInsets.only(left: deviceWidth * 0.09, right: deviceWidth * 0.09, top: deviceHeight * 0.125),
                   child: Column(
                     //mainAxisSize: MainAxisSize.min,
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -209,10 +210,10 @@ class _SignInState extends State<SignIn> {
                       Stack(
                         children: <Widget>[
                           Container(
-                            margin: EdgeInsets.only(left: devicewidth * 0.05),
-                            padding: EdgeInsets.only(top: deviceheight * 0.0125),
-                            height: devicewidth*0.15,
-                            width: devicewidth * 0.6,
+                            margin: EdgeInsets.only(left: deviceWidth * 0.05),
+                            padding: EdgeInsets.only(top: deviceHeight * 0.0125),
+                            height: deviceWidth*0.15,
+                            width: deviceWidth * 0.6,
                             alignment: Alignment.topCenter,
                             decoration: BoxDecoration(
                               color: Color(0xff383838),
@@ -235,8 +236,8 @@ class _SignInState extends State<SignIn> {
                           ),
 
                           Container(
-                            padding: EdgeInsets.symmetric(horizontal: devicewidth * 0.04),
-                            margin: EdgeInsets.only(top: deviceheight * 0.05),
+                            padding: EdgeInsets.symmetric(horizontal: deviceWidth * 0.04),
+                            margin: EdgeInsets.only(top: deviceHeight * 0.05),
                             decoration: BoxDecoration(
                                 color: Colors.white,
                                 borderRadius: BorderRadius.circular(24),
@@ -293,10 +294,8 @@ class _SignInState extends State<SignIn> {
                   ),
                 ),
               )
-          ));
+          )
+      );
     }
-
-
-
   }
 }

@@ -1,3 +1,7 @@
+/*
+ * All rights reserved ~ ©Phil Gengenbach
+ */
+
 import 'package:flutter/material.dart';
 import 'package:plantit/services/auth.dart';
 import 'package:plantit/shared/Loading.dart';
@@ -10,9 +14,6 @@ class Registration extends StatefulWidget {
   @override
   _RegistrationState createState() => _RegistrationState();
 }
-
-
-
 
 class _RegistrationState extends State<Registration> {
 
@@ -36,7 +37,6 @@ class _RegistrationState extends State<Registration> {
     double devicewidth = mediaQuery.size.width;
 
     TextStyle style = TextStyle(fontFamily: 'Montserrat', fontSize: 20.0, color: Color(0xff454545));
-
 
     // --------- UI ELEMENTS ------------------
 
@@ -191,12 +191,12 @@ class _RegistrationState extends State<Registration> {
         minWidth: MediaQuery.of(context).size.width,
         padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
         onPressed: () async {
-          if(_formInputKey.currentState.validate()) {
-            loading = true;
+          if(_formInputKey.currentState.validate()) { //Checks if inputs match the correct form
+            loading = true; //Loading Widget is shown
             print(email);
             print(password.length);
-            dynamic result = await _auth.RegisterWithEmailAndPassword(email, password, username);
-            if(result == null) {
+            dynamic result = await _auth.registerWithEmailAndPassword(email, password, username);
+            if(result == null) { //no User returned -> Error
               setState(() {
                 loading = false;
                 error = "Please enter a valid E-Mail and Password!";
@@ -214,7 +214,7 @@ class _RegistrationState extends State<Registration> {
 
 
     if(loading == true) {
-      return Loading();
+      return Loading(); //Loading is True -> Show Loading Widget
     } else {
       return Scaffold(
           resizeToAvoidBottomPadding: false,

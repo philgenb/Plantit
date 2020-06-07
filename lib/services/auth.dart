@@ -1,3 +1,7 @@
+/*
+ * All rights reserved ~ ©Phil Gengenbach
+ */
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:plantit/models/user.dart';
 import 'package:plantit/services/database.dart';
@@ -6,11 +10,14 @@ class AuthService {
 
   final FirebaseAuth _auth = FirebaseAuth.instance; //Private Instanz der Firebase Auth Klasse
 
+
+  //Return Current Firebase User
   Future<FirebaseUser> getCurrentFirebaseUser() async {
     FirebaseUser user = await _auth.currentUser();
     return user;
   }
 
+  //Converts Firebaseuser object into own user Object -> only relevant information to deal with
   Future<User> getCurrentUser() async {
     FirebaseUser user = await _auth.currentUser();
     return _getUserFromFirebaseUser(user);
@@ -26,9 +33,7 @@ class AuthService {
 
   //Stream - Auth Change User
   Stream<User> get user {
-    return _auth.onAuthStateChanged
-        //.map((FirebaseUser user) => _getUserFromFirebaseUser(user));
-        .map(_getUserFromFirebaseUser);
+    return _auth.onAuthStateChanged.map(_getUserFromFirebaseUser);
   }
 
   Future signInAnonym() async {
@@ -42,7 +47,7 @@ class AuthService {
     }
   }
 
-  Future LoginWithEmailAndPassword(String email, String password) async {
+  Future loginWithEmailAndPassword(String email, String password) async {
     try {
       AuthResult authresult = await _auth.signInWithEmailAndPassword(email: email, password: password);
       FirebaseUser user = authresult.user;
@@ -53,7 +58,7 @@ class AuthService {
     }
   }
 
-  Future RegisterWithEmailAndPassword(String email, String password, String username) async {
+  Future registerWithEmailAndPassword(String email, String password, String username) async {
     try {
       AuthResult authresult = await _auth.createUserWithEmailAndPassword(email: email, password: password);
       FirebaseUser user = authresult.user;

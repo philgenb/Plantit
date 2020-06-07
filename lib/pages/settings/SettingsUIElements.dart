@@ -1,14 +1,21 @@
-import 'dart:ui';
+/*
+ * All rights reserved ~ ©Phil Gengenbach
+ */
 
+import 'dart:ui';
 import 'package:flutter/material.dart';
 
 class SettingsUIElements {
 
+  /*
+      outsourced Helping UI-Class for Settings Menu
+   */
+
   SizedBox getSettingButton(String buttonText, var mediaQuery, var onpressed) {
-    double devicewidth = mediaQuery.size.width;
+    double deviceWidth = mediaQuery.size.width;
 
     return SizedBox(
-      width: devicewidth * 0.75,
+      width: deviceWidth * 0.75,
       child: RaisedButton(
         elevation: 5,
         padding: EdgeInsets.symmetric(horizontal: 25, vertical: 7.5),
